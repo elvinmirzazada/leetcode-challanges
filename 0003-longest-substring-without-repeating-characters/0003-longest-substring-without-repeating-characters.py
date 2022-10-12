@@ -3,7 +3,7 @@ class Solution:
         max_len, dup_set = 0, []
         i=0
         while i < len(s):
-            print(dup_set)
+            # print(dup_set)
             if s[i] not in set(dup_set):
                 dup_set.append(s[i])
             else:
