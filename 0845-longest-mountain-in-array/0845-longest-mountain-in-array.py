@@ -1,12 +1,12 @@
 class Solution:
     def longestMountain(self, arr: List[int]) -> int:
         length = 0
-        i = 1
-        arr_len = len(arr)
-        if arr_len < 3:
+        if len(arr) < 3:
             return 0
-        while i < len(arr)-1:
+        
+        for i in range(1, len(arr)-1):
             count = 0
+            
             if arr[i-1] < arr[i] and arr[i] > arr[i+1]:
                 k = i - 1
                 m = i + 1
@@ -24,7 +24,6 @@ class Solution:
             if count > length:
                 length = count
                 
-            i += 1
             
         return length
             
