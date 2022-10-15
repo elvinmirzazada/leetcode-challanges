@@ -3,13 +3,11 @@ class Solution:
         x = str(x)
         
         is_negative = x[0] == '-'
-        if is_negative: 
-            x = x[1:]
-            
         number_str = ''
         
         i = len(x)-1
-        while i >= 0:
+        end = 1 if is_negative else 0
+        while i >= end:
             number_str += x[i]
             i -= 1  
             
