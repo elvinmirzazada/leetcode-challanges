@@ -11,9 +11,7 @@ class Solution:
             else:
                 mid = (i + j) // 2
                 self.result = min(self.result, arr[mid]) 
-                if arr[mid] >= arr[i]:
-                    new_i = mid + 1                    
-                    self.c_binary_search(arr, new_i, j)
+                if arr[mid] >= arr[i]:                 
+                    self.c_binary_search(arr, mid + 1 , j)
                 else:
-                    new_j = mid - 1
-                    self.c_binary_search(arr, i, new_j)
+                    self.c_binary_search(arr, i, mid - 1)
