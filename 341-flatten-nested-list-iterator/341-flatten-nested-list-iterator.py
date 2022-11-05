@@ -28,7 +28,6 @@ class NestedIterator:
         for l in nestedList:
             self.rec_gen(l)
             
-        print(self.list)
         
     def rec_gen(self, nested):
         if nested.isInteger():
