@@ -1,6 +1,9 @@
 class Solution:
     def triangularSum(self, nums: List[int]) -> int:
-        return self.rec_find(nums)
+        # return self.rec_find(nums)
+        while len(nums) > 1:
+            nums = [(a + b) % 10 for a, b in zip(nums, nums[1:])]
+        return nums[0]
         
     def rec_find(self, arr):
         if len(arr) == 1:
