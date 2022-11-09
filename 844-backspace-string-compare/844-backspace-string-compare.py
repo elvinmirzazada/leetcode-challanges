@@ -16,7 +16,6 @@ class Solution:
                     s_q.pop()
             else:
                 s_q.append(ch)
-        print(f_q, s_q)
         if len(f_q) != len(s_q):
             return False
         
