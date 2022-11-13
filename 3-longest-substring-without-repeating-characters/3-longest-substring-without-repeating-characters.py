@@ -8,8 +8,8 @@ class Solution:
             
             if ch not in sub_set:
                 sub_set.add(ch)
-                # max_len = max(max_len, idx-start+1)
-                max_len = max_len if max_len > (idx-start+1) else idx-start+1
+                max_len = max(max_len, idx-start+1)
+                # max_len = max_len if max_len > (idx-start+1) else idx-start+1
             else:
                 while ch in sub_set:
                     sub_set.discard(s[start])
