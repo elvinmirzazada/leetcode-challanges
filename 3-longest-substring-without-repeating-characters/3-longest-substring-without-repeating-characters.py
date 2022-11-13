@@ -15,5 +15,5 @@ class Solution:
                     start += 1
                     
                 sub_set.add(ch)
-                max_len = max(max_len, idx-start+1)
+                # max_len = max(max_len, idx-start+1)
         return max_len
