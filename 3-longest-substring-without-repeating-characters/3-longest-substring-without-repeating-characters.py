@@ -10,13 +10,10 @@ class Solution:
                 sub_set.add(ch)
                 max_len = max(max_len, idx-start+1)
             else:
-                while start < idx:
+                while ch in sub_set:
                     sub_set.discard(s[start])
-                    if s[start] == s[idx]:
-                        start += 1
-                        break
-                    else:
-                        start += 1
+                    start += 1
+                    
                 sub_set.add(ch)
                 max_len = max(max_len, idx-start+1)
         return max_len
