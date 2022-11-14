@@ -11,7 +11,7 @@ class Solution:
                 nums[p1], nums[p2] = nums[p2], nums[p1]
                 
             p2 += 1
-            if p2 >= len(nums):
+            if p2 >= len(nums) or nums[p1] == 0:
                 p1 += 1
                 p2 = p1 + 1
                     
