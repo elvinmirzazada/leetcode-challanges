@@ -34,5 +34,5 @@ class Solution:
             if color[v] == Solution.WHITE:
                 dfs(v)
         
-        return sorted_order[::-1] if is_possible else []
+        return reversed(sorted_order) if is_possible else []
         
