@@ -1,6 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return self.dp_memo(n)
+        memo = {}
+        return self.dp_memo(n, memo)
 #         dp = [1] * n
 #         if n > 1:
 #             dp[1] = 2
@@ -11,7 +12,7 @@ class Solution:
 #         return dp[-1]
     
     
-    def dp_memo(self, n, memo={}):
+    def dp_memo(self, n, memo):
         if n == 1:
             return 1
         if n == 2:
