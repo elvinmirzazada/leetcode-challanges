@@ -9,7 +9,7 @@ class Solution:
         def backtracking(nums, permutation):
 
             if len(permutation) == len(nums):
-                result.append(tuple(permutation))
+                result.append(permutation.copy())
                 return
 
             for i in range(len(nums)):
