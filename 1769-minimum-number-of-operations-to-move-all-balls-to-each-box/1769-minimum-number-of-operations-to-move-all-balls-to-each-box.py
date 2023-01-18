@@ -1,23 +1,22 @@
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
-        result = [0] * len(boxes)
-        
-        for i, n in enumerate(boxes):
+        ans = [0]*len(boxes)
+        leftCount, leftCost, rightCount, rightCost, n = 0, 0, 0, 0, len(boxes)
+        for i in range(1, n):
+            if boxes[i-1] == '1': leftCount += 1
+            leftCost += leftCount # each step move to right, the cost increases by # of 1s on the left
+            ans[i] = leftCost
             
-            for j in range(i+1, len(boxes)):
-                
-                if boxes[j] == '1':
-                    
-                    result[i] += abs(i-j)
-                    
-        
-        for i in range(len(boxes)-1, -1, -1):
+        # print(ans)
+        for i in range(n-2, -1, -1):
+            if boxes[i+1] == '1': rightCount += 1
+            rightCost += rightCount
+            ans[i] += rightCost
             
-            for j in range(i-1, -1, -1):
-                
-                if boxes[j] == '1':
-                    
-                    result[i] += abs(i-j)
         
-        
-        return result
+        return ans
+    
+    
+#     0 1 3
+    
+#     1 0 0
