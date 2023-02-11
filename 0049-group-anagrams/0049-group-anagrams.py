@@ -1,15 +1,18 @@
+from collections import defaultdict
+
 class Solution:
-    def groupAnagrams(self, words: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         result = defaultdict(list)
         
-        for word in words:
-            count = [0] * 26
+        def create_unique_key(word):
+            alph = [0] * 26
+            for ch in word:
+                alph[ord(ch) - ord('a')] += 1
             
-            for c in word:
-                count[ord(c) - ord('a')] += 1
-                
-            result[tuple(count)].append(word)
-            
+            return tuple(alph)
+        
+        for s in strs:
+            key = create_unique_key(s)
+            result[key].append(s)
             
         return result.values()
-            
