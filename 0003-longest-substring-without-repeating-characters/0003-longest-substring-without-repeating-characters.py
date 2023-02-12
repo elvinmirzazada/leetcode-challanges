@@ -1,19 +1,19 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        max_len, dup_set = 0, []
-        i=0
-        while i < len(s):
-            # print(dup_set)
-            if s[i] not in set(dup_set):
-                dup_set.append(s[i])
-            else:
-                max_len = max(max_len, len(dup_set))
-                while s[i] in set(dup_set):
-                    dup_set = dup_set[1:]
-                dup_set.append(s[i])
+        sub = ''
+        longest = 0    
+        for ch in s:
+            ind = 0
+            i = 0
+            while i < len(sub):
+                if sub[i] == ch:
+                    ind = i + 1
+                    break
                 
-            i+=1
- 
-        max_len = max(max_len, len(dup_set))    
+                i += 1
             
-        return max_len
+            sub = sub[ind:]+ch
+            longest = max(longest, len(sub))
+        
+        return longest
+    
