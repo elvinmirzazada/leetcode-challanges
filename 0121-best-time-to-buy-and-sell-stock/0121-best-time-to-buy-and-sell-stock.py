@@ -6,7 +6,7 @@ class Solution:
         for p in prices:
             if buy > p:
                 buy = p
-            else:
-                profit = max(profit, p - buy)
+            
+            profit = max(profit, p - buy)
                 
         return profit
