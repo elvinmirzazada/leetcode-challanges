@@ -10,14 +10,9 @@ class Solution:
         def merge(list1, list2):
             node = ListNode()
             tmp = node
-            while list1 or list2:
-                if not list1:
-                    tmp.next = list2
-                    list2 = list2.next
-                elif not list2:
-                    tmp.next = list1
-                    list1 = list1.next
-                elif list1.val <= list2.val:
+            while list1 and list2:
+                
+                if list1.val <= list2.val:
                     tmp.next = list1
                     list1 = list1.next
                 else:
@@ -25,7 +20,12 @@ class Solution:
                     list2 = list2.next
                 
                 tmp = tmp.next
-            
+                
+            if not list1:
+                tmp.next = list2
+            if not list2:
+                tmp.next = list1
+                
             return node.next
         
         
