@@ -9,14 +9,9 @@ class Solution:
         
         curr = merged
         
-        while list1 or list2:
-            if not list1:
-                curr.next = list2
-                list2 = list2.next
-            elif not list2:
-                curr.next = list1
-                list1 = list1.next
-            elif list1.val <= list2.val:
+        while list1 and list2:
+          
+            if list1.val <= list2.val:
                 curr.next = list1
                 list1 = list1.next
             else:
@@ -24,5 +19,10 @@ class Solution:
                 list2 = list2.next
             
             curr = curr.next
+        
+        if not list1:
+            curr.next = list2
+        elif not list2:
+            curr.next = list1
         
         return merged.next
